@@ -37,7 +37,7 @@ def create_user():
 
 @api.route('/users/<int:id>', methods=['DELETE'])
 def delete_user(id):
-    user = db.session.get(user, id)
+    user = db.session.get(User, id)
     if not user:
         return jsonify({"error": "User not found"}), 404
 
